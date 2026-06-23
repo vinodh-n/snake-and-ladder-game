@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake and Ladder Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎲 Snake and Ladder Game</h1>
+            <p class="subtitle">Interactive Board Game</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="player-info">
+                    <div class="player-status" id="player1-status">
+                        <div class="player-badge player-1">Player 1</div>
+                        <div class="position-display">
+                            Position: <span id="p1-position">1</span>
+                        </div>
+                    </div>
+                    <div class="player-status" id="player2-status">
+                        <div class="player-badge player-2">Player 2</div>
+                        <div class="position-display">
+                            Position: <span id="p2-position">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="current-player">
+                    <p>Current Player: <span id="current-player">Player 1</span></p>
+                </div>
+
+                <div class="dice-section">
+                    <div class="dice" id="dice">🎲</div>
+                    <p id="dice-value">Roll the dice!</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-primary" id="rollBtn">Roll Dice</button>
+                    <button class="btn btn-secondary" id="rulesBtn">Rules</button>
+                    <button class="btn btn-danger" id="resetBtn">Reset Game</button>
+                </div>
+
+                <div class="game-message" id="game-message">
+                    Player 1's turn - Click "Roll Dice"
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="board-section">
+                <div class="board" id="board"></div>
+            </div>
+
+            <!-- Moves History -->
+            <div class="moves-section">
+                <h3>Move History</h3>
+                <ul class="moves-list" id="movesList">
+                    <li class="placeholder">Game moves will appear here...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>How to Play</h2>
+            <div class="rules-content">
+                <h3>Objective</h3>
+                <p>Be the first player to reach position 100 on the board.</p>
+
+                <h3>Game Rules</h3>
+                <ol>
+                    <li><strong>Rolling the Dice:</strong> Players take turns rolling a virtual dice (1-6)</li>
+                    <li><strong>Moving:</strong> Move your piece forward by the number shown on the dice</li>
+                    <li><strong>Ladders:</strong> If you land on a ladder's bottom, climb up to its top</li>
+                    <li><strong>Snakes:</strong> If you land on a snake's head, slide down to its tail</li>
+                    <li><strong>Exact Number:</strong> You must land exactly on 100 to win. If you roll too high, you stay at your current position</li>
+                    <li><strong>Winning:</strong> First player to reach 100 wins the game!</li>
+                </ol>
+
+                <h3>Board Features</h3>
+                <ul>
+                    <li>🪜 <strong>Ladders (Green):</strong> Climb up to advance faster</li>
+                    <li>🐍 <strong>Snakes (Red):</strong> Slide down - be careful!</li>
+                    <li>🔵 <strong>Player 1 (Blue):</strong> First player marker</li>
+                    <li>🟡 <strong>Player 2 (Yellow):</strong> Second player marker</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Plan your moves carefully to avoid snake tiles</li>
+                    <li>Try to land on ladder tiles when possible</li>
+                    <li>Keep track of your opponent's position</li>
+                    <li>The dice value is random, so luck plays a big role!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Winner Modal -->
+    <div id="winnerModal" class="modal">
+        <div class="modal-content winner-modal">
+            <h2 id="winnerText">🎉 Player 1 Wins! 🎉</h2>
+            <p class="winner-message">Congratulations on your victory!</p>
+            <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Snake and Ladder Game. Built with ❤️ using HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
